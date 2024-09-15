@@ -1,5 +1,3 @@
-import time
-t_start = time.perf_counter()
 d = open("input.txt")
 n = int(d.readline())
 f1 = 0
@@ -17,4 +15,3 @@ elif n == 0:
     new_f.write(f'{f1}')
 new_f.close()
 d.close()
-print(time.perf_counter() - t_start)
