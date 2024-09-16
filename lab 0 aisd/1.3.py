@@ -13,6 +13,6 @@ while (not(-10**9 <= a <= 10**9)) or (not(-10**9 <= b <= 10**9)):
 
 if -10**9 <= a <= 10**9 and -10**9 <= b <= 10**9:
     new_f = open("output.txt", "w+")
-    new_f.write(f'{a + b**2}')
+    new_f.write(f'{a + b}')
     new_f.close()
 f.close()
