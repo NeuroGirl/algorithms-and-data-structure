@@ -1,5 +1,3 @@
-output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab1/task10/txtf/output.txt", 'w')
-
 def polyndrome(num_len, list_to_poly):
     if num_len == len(set(list_to_poly)):
         return min(list_to_poly)
@@ -34,7 +32,7 @@ def polyndrome(num_len, list_to_poly):
 
 
 
-
+output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab1/task10/txtf/output.txt", 'w')
 input_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab1/task10/txtf/input.txt")
 num_len = int(input_f.readline())
 file = input_f.readline()

@@ -1,5 +1,3 @@
-output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab1/task2/txtf/output.txt", 'w')
-
 def insertion_sort_advanced(num_len, list_to_sort):
     motions = [1]
     for i in range(1, num_len):
@@ -10,7 +8,7 @@ def insertion_sort_advanced(num_len, list_to_sort):
         motions.append(i + 1)
     return motions, list_to_sort
 
-
+output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab1/task2/txtf/output.txt", 'w')
 input_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab1/task2/txtf/input.txt")
 num_len = int(input_f.readline())
 file = input_f.readline()

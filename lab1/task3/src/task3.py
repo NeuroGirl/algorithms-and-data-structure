@@ -1,5 +1,3 @@
-output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab1/task3/txtf/output.txt", 'w')
-
 def insertion_sort_iversed(num_len, list_to_sort):
     for i in range(1, num_len):
         key = list_to_sort[i]
@@ -10,7 +8,7 @@ def insertion_sort_iversed(num_len, list_to_sort):
         list_to_sort[j + 1] = key
     return list_to_sort
 
-
+output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab1/task3/txtf/output.txt", 'w')
 input_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab1/task3/txtf/input.txt")
 num_len = int(input_f.readline())
 file = input_f.readline()
