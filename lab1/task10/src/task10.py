@@ -2,7 +2,7 @@ output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab1/task
 
 def polyndrome(num_len, list_to_poly):
     if num_len == len(set(list_to_poly)):
-        return sorted(list(list_to_poly))[0]
+        return min(list_to_poly)
     else:
         n_let = dict()
         c_let = ''
@@ -20,7 +20,7 @@ def polyndrome(num_len, list_to_poly):
                 exit()
 
         result = list()
-        if len(n_let) != 0:
+        if n_let:
             for letter in n_let:
                 res = c_let + letter * n_let[letter] + c_let[::-1]
                 if result:
