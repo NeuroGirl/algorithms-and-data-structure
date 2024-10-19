@@ -1,6 +1,5 @@
 import time
 import tracemalloc
-import random
 
 import sys
 import os
@@ -10,15 +9,15 @@ src_dir = os.path.join(current_dir, '..', '..')
 print(src_dir)
 sys.path.insert(0, src_dir)
 
-from task10.src.task10 import polyndrome
-
+from task4.src.task4 import start_search
 
 start_time = time.perf_counter()
 tracemalloc.start()
-list_to_sort = [random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ") for _ in range(10 ** 6)]
+list_where_find = [1, 5, 8, 12, 13]
+list_to_find = [8, 1, 23, 1, 11]
 
-result = polyndrome(len(list_to_sort), list_to_sort)
+result = start_search(list_where_find, list_to_find)
+print(*result)
 print('Время работы: ' + str((time.perf_counter() - start_time)))
 print('Память: ' + str(tracemalloc.get_traced_memory()[1]/1024**2) + ' Мб')
 tracemalloc.stop()
-print(result)
