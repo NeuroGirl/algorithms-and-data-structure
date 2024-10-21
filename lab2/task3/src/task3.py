@@ -1,3 +1,13 @@
+import sys
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.join(current_dir, '..', '..')
+print(src_dir)
+sys.path.insert(0, src_dir)
+
+from utils import open_close, write
+
 def search(nums, nums_copy, l, mid, r):
     i = k = l
     j = mid + 1
@@ -35,19 +45,14 @@ def search_inversions(nums, nums_copy, l, r):
 
     return inversins
 
-output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task3/txtf/output.txt", 'w')
-input_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task3/txtf/input.txt")
-num_len = int(input_f.readline())
-file = input_f.readline()
-if 1 <= num_len <= 10 ** 5:
-    nums = list(map(int, list(file.split(' '))))
+file = open_close(3, 1)
+if 1 <= file[0] <= 10 ** 5:
+    f = file[1]
+    nums = list(map(int, list(f.split(' '))))
     nums_copy = nums.copy()
     if all([abs(x) <= 10 ** 9 for x in nums]):
-        output_f.write(str(search_inversions(nums, nums_copy, 0, num_len - 1)))
+        write(3, str(search_inversions(nums, nums_copy, 0, file[0] - 1)))
     else:
         print('Введите подходящие числа')
 else:
     print('Неверное количество введенных чисел')
-
-output_f.close()
-input_f.close()

@@ -1,3 +1,13 @@
+import sys
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.join(current_dir, '..', '..')
+print(src_dir)
+sys.path.insert(0, src_dir)
+
+from utils import open_close, write
+
 def sort_merge(nums):
     if len(nums) > 1:
         middle = len(nums) // 2
@@ -26,18 +36,14 @@ def sort_merge(nums):
             q += 1
     return nums
 
-output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task1/txtf/output.txt", 'w')
-input_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task1/txtf/input.txt")
-num_len = int(input_f.readline())
-file = input_f.readline()
-if 1 <= num_len <= 2 * 10 ** 4:
-    nums = list(map(int, list(file.split(' '))))
+
+file = open_close(1, 1)
+if 1 <= file[0] <= 2 * 10 ** 4:
+    f = file[1]
+    nums = list(map(int, list(f.split(' '))))
     if all([abs(x) <= 10 ** 9 for x in nums]):
-        output_f.write(' '.join(map(str, sort_merge(nums))))
+        write(1, ' '.join(map(str, sort_merge(nums))))
     else:
         print('Введите подходящие числа')
 else:
     print('Неверное количество введенных чисел')
-
-output_f.close()
-input_f.close()

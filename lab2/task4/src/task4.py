@@ -1,7 +1,17 @@
-file = open('C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task4/txtf/input.txt')
-n, mass = int(file.readline()), list(map(int, file.readline().split()))
-k, mass_find = int(file.readline()), list(map(int, file.readline().split()))
+import sys
+import os
 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.join(current_dir, '..', '..')
+print(src_dir)
+sys.path.insert(0, src_dir)
+
+from utils import open_close, write
+
+file = open_close(4, 2)
+mass, mass_find = file[1], file[3]
+n, mass = file[0], list(map(int, list(mass.split(' '))))
+k, mass_find = file[2], list(map(int, list(mass_find.split(' '))))
 
 def bin_searching(mass, what_find):
     l = 0
@@ -20,6 +30,4 @@ def bin_searching(mass, what_find):
 def start_search(mass, mass_find):
     return [bin_searching(mass, mass_find[i]) for i in range(len(mass_find))]
 
-
-output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task1/txtf/output.txt", 'w')
-output_f.write(' '.join(map(str, start_search(mass, mass_find))))
+write(4, ' '.join(map(str, start_search(mass, mass_find))))

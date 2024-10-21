@@ -1,3 +1,14 @@
+import sys
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.join(current_dir, '..', '..')
+print(src_dir)
+sys.path.insert(0, src_dir)
+
+from utils import open_close, write
+
+
 def read(num_len, file_A, file_B):
     a = []
     b = []
@@ -102,16 +113,13 @@ def strassen_apply(num_len, file_A, file_B):
             c = strassen(st_a, st_b)
             final.append(c)
     return(final)
- 
-output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task9/txtf/output.txt", 'w')
-input_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task9/txtf/input.txt")
-num_len = int(input_f.readline())
-g = input_f.readline()
-h = input_f.readline()
+
+file = open_close(9, -2)
+
+num_len = file[0]
+g = file[1]
+h = file[2]
 file_A = list(map(int, list(g.split(' '))))
 file_B = list(map(int, list(h.split(' '))))
 
-output_f.write(' '.join(map(str, strassen_apply(num_len, file_A, file_B))))
-
-output_f.close()
-input_f.close()
+write(9, ' '.join(map(str, strassen_apply(num_len, file_A, file_B))))

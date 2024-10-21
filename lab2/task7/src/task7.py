@@ -1,3 +1,13 @@
+import sys
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.join(current_dir, '..', '..')
+print(src_dir)
+sys.path.insert(0, src_dir)
+
+from utils import open_close, write
+
 def find_max(a):
     max_sum, summ = 0, 0
     for i in range(len(a)):
@@ -11,8 +21,6 @@ def find_max(a):
             summ = 0
     return a[start_indx:end_indx + 1]
 
-
-with open('C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task7/txtf/output.txt', 'w') as file:
-    f_input = list(map(int, open('C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task7/txtf/input.txt').readline().split()))
-    a = find_max(f_input)
-    file.write(' '.join(map(str, a)))
+file = open_close(7, -1)[0]
+a = find_max(list(map(int, list(file.split(' ')))))
+write(7, ' '.join(map(str, a)))
