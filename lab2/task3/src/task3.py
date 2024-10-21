@@ -1,44 +1,53 @@
-def search(mass, copy_mass, l, mid, r):
+def search(nums, nums_copy, l, mid, r):
     i = k = l
     j = mid + 1
     count_inf = 0
 
     while i <= mid and j <= r:
-        if mass[i] <= mass[j]:
-            copy_mass[k] = mass[i]
+        if nums[i] <= nums[j]:
+            nums_copy[k] = nums[i]
             i += 1
         else:
-            copy_mass[k] = mass[j]
+            nums_copy[k] = nums[j]
             j += 1
             count_inf += (mid - i + 1)
         k += 1
 
     while i <= mid:
-        copy_mass[k] = mass[i]
+        nums_copy[k] = nums[i]
         k += 1
         i += 1
 
     for i in range(l, r + 1):
-        mass[i] = copy_mass[i]
+        nums[i] = nums_copy[i]
     return count_inf
 
 
-def search_inversions(mass, copy_mass, l, r):
+def search_inversions(nums, nums_copy, l, r):
     if r <= l:
         return 0
 
     mid = (l + r) // 2
-    count_inf = 0
-    count_inf += search_inversions(mass, copy_mass, l, mid)
-    count_inf += search_inversions(mass, copy_mass, mid + 1, r)
-    count_inf += search(mass, copy_mass, l, mid, r)
+    inversins = 0
+    inversins += search_inversions(nums, nums_copy, l, mid)
+    inversins += search_inversions(nums, nums_copy, mid + 1, r)
+    inversins += search(nums, nums_copy, l, mid, r)
 
-    return count_inf
+    return inversins
 
-
-with open('C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task3/txtf/output.txt', 'w') as f:
-    file = open('C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task3/txtf/input.txt')
-    n = int(file.readline())
-    nums = list(map(int, file.readline().split()))
+output_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task3/txtf/output.txt", 'w')
+input_f = open("C:/Users/ВЕРОНИКА/Desktop/показ/lab-aisd/lab2/task3/txtf/input.txt")
+num_len = int(input_f.readline())
+file = input_f.readline()
+if 1 <= num_len <= 10 ** 5:
+    nums = list(map(int, list(file.split(' '))))
     nums_copy = nums.copy()
-    f.write(str(search_inversions(nums, nums_copy, 0, n - 1)))
+    if all([abs(x) <= 10 ** 9 for x in nums]):
+        output_f.write(str(search_inversions(nums, nums_copy, 0, num_len - 1)))
+    else:
+        print('Введите подходящие числа')
+else:
+    print('Неверное количество введенных чисел')
+
+output_f.close()
+input_f.close()
