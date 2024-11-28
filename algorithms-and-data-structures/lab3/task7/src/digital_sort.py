@@ -10,7 +10,7 @@ from utils import read_from_file, write_in_file, measuring
 
 def radix_sort_phase(strings, phase):
     """Сортировка по заданной фазе (символу)."""
-    return sorted(strings, key=lambda x: x[1][phase])
+    return sorted(strings, key=lambda x: x[1][phase-1])
 
 if __name__ == "__main__":
     data = read_from_file('algorithms-and-data-structures/lab3/task7/txtf/input.txt')
