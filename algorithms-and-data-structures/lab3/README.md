@@ -11,12 +11,12 @@ lab3/
 ├── task1/
 │   ├── src/
 │   │   ├── quick_sort.py
-│   │   ├── randomized_quick_sort.py
-│   │   └── randomized_quick_sort_p3.py
+│   │   ├── random_quick_sort.py
+│   │   └── random_quick_sort_improved.py
 │   ├── tests/
-│   │   ├── test_quick_sort.py
-│   │   ├── test_randomized_quick_sort.py
-│   │   └── test_randomized_quick_sort_p3.py
+│   │   ├── test_QS.py
+│   │   ├── test_RQS.py
+│   │   └── test_RQSI.py
 │   ├── txtf/
 │   │   ├── input.txt
 │   │   └── ounput.txt
@@ -24,9 +24,9 @@ lab3/
 │
 ├── task2/
 │   ├── src/
-│   │   └── anti_quick_sort.py
+│   │   └── quick_sort_desolver.py
 │   ├── tests/
-│   │   └── test_anti_quick_sort.py
+│   │   └── test_QSD.py
 │   ├── txtf/
 │   │   ├── input.txt
 │   │   └── ounput.txt
@@ -36,7 +36,7 @@ lab3/
 │   ├── src/
 │   │   └── scarecrow_sort.py
 │   ├── tests/
-│   │   └── test_scarecrow_sort.py
+│   │   └── test_scarecrow.py
 │   ├── txtf/
 │   │   ├── input.txt
 │   │   └── ounput.txt
@@ -44,9 +44,9 @@ lab3/
 │
 ├── task5/
 │   ├── src/
-│   │   └── hirsch_index.py
+│   │   └── hirsh_index.py
 │   ├── tests/
-│   │   └── hirsch_index.py
+│   │   └── test_hirsh.py
 │   ├── txtf/
 │   │   ├── input.txt
 │   │   └── ounput.txt
@@ -54,24 +54,25 @@ lab3/
 │
 ├── task6/
 │   ├── src/
-│   │   └── sum_of_tenths.py
+│   │   └── integer_sort.py
 │   ├── tests/
-│   │   └── test_sum_of_tenths.py
+│   │   └── test_integer_sort.py
 │   ├── txtf/
 │   │   ├── input.txt
 │   │   └── ounput.txt
 │   └── README.md
 │
-├── task8/
+├── task7/
 │   ├── src/
-│   │   └── closest_points.py
+│   │   └── digital_sort.py
 │   ├── tests/
-│   │   └── test_closest_points.py
+│   │   └── test_digital_sort.py
 │   ├── txtf/
 │   │   ├── input.txt
 │   │   └── ounput.txt
 │   └── README.md
-│
+|
+├── Отчет3.pdf
 ├── README.md
 └── utils.py
 ```
@@ -97,9 +98,9 @@ lab3/
 
 В данной задаче реализован алгоритм сортировки массива чисел вида A[i] * B[j], где 1 <= i <= n и ш <= j <= m и вывести сумму каждого десятого элемента полученной последовательности.
 
-### Задача 8: K ближайших точек к началу координат
+### Задача 7: Цифровая сортировка
 
-В данной задаче реализован алгоритм нахождения K ближайшиз точек к началу координат.
+В данной задаче реализован алгоритм пофазовой цифровой (поразрядной) сортировки массива строк, состоящих из латинских букв, в k фаз.
 
 ## Запуск проектов
 
@@ -129,20 +130,6 @@ pip install psutil
 ## Формат входных и выходных данных
 
 Каждая задача имеет свой формат входных и выходных данных, который подробно описан в соответствующих README файлов каждой задачи.
-
-### Пример формата входных данных:
-```
-n
-a1 a2 a3 ... an
-```
-- Первая строка: число n — количество элементов массива.
-- Вторая строка: n целых чисел, разделённых пробелами.
-
-### Пример формата выходных данных:
-```
-<результат>
-```
-- Формат результата зависит от конкретной задачи.
 
 ## Тестирование
 
