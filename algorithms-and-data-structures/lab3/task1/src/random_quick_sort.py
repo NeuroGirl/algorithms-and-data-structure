@@ -3,7 +3,6 @@ import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.join(current_dir, '..', '..')
-print(src_dir)
 sys.path.insert(0, src_dir)
 
 import random
