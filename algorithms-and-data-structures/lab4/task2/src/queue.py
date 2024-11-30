@@ -23,4 +23,4 @@ if __name__ == '__main__':
     result = queue_add_del(n, commands)
     write_in_file('algorithms-and-data-structures/lab4/task2/txtf/output.txt', result)
 
-    measuring(1e2, queue_add_del, n, commands)
+    measuring(1e2,queue_add_del, n, commands)

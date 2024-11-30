@@ -11,7 +11,7 @@ from task2.src.queue import queue_add_del
 from utils import generate_random_array_queue, measuring
 
 
-class TestScarecrowSort(unittest.TestCase):
+class TestQueue(unittest.TestCase):
 
     def test_should_check_the_possibility_of_sorting_example1_array(self):
         # given
