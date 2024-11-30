@@ -34,7 +34,7 @@ def measuring(mult, task_func, *args):
     print(f"Memory: {memory} Mb")
 
 
-def read_from_file(filename: str, type=int):
+def read_from_file(num, filename: str, type=int):
     # Используем переменную окружения для корректного пути к файлу
     txtf_path = os.environ.get('TXT_FILE_PATH', '')
     filepath = os.path.join(filename)
@@ -44,7 +44,14 @@ def read_from_file(filename: str, type=int):
             data = f.read()
             print(f"Input data: {data}")
             return data
-        data = list(map(str, f.read().split()))
+        if num == 1:
+            first_line = f.readline().split(" ")
+            n, m = int(first_line[0]), int(first_line[1])
+            data = [n, m]
+            for _ in range(m):
+                data.append(f.readline())
+        else:
+            data = list(map(str, f.read().split()))
         f.close()
         print(f"Input data: {data}")
         return data

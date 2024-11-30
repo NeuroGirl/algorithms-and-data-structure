@@ -28,7 +28,7 @@ def bracet_counter_cycled(n, lines):
     return results
 
 if __name__ == '__main__':
-    data = read_from_file('algorithms-and-data-structures/lab4/task3/txtf/input.txt')
+    data = read_from_file(0, 'algorithms-and-data-structures/lab4/task3/txtf/input.txt')
 
     n, lines = data[0], data[1:]
     result = bracet_counter_cycled(n, lines)

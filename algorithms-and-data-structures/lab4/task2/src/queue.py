@@ -17,7 +17,7 @@ def queue_add_del(n, commands):
     return deleted_from_queue
 
 if __name__ == '__main__':
-    data = read_from_file('algorithms-and-data-structures/lab4/task2/txtf/input.txt')
+    data = read_from_file(0, 'algorithms-and-data-structures/lab4/task2/txtf/input.txt')
 
     n, commands = data[0], data[1:]
     result = queue_add_del(n, commands)

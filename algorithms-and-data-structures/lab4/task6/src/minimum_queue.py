@@ -21,7 +21,7 @@ def queue_func_min(commands):
   return res
 
 if __name__ == '__main__':
-    data = read_from_file('algorithms-and-data-structures/lab4/task6/txtf/input.txt')
+    data = read_from_file(0, 'algorithms-and-data-structures/lab4/task6/txtf/input.txt')
 
     commands = data[1:]
     result = queue_func_min(commands)
