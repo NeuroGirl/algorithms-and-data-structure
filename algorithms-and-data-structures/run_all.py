@@ -65,7 +65,7 @@ def run_lab(lab_path):
 
 
 def main():
-    labs = ['algorithms-and-data-structures\lab3']
+    labs = ['algorithms-and-data-structures\lab3', 'algorithms-and-data-structures\lab4']
     for lab in labs:
         run_lab(lab)
 
