@@ -7,7 +7,7 @@ sys.path.insert(0, src_dir)
 
 import unittest
 
-from task2.src.quick_sort_desolver import anti_quick_sort
+from task2.src.quick_sort_desolver import quick_sort_desolver
 
 
 class TestAntiQuickSort(unittest.TestCase):
@@ -23,8 +23,8 @@ class TestAntiQuickSort(unittest.TestCase):
         expected_result2 = [1, 4, 6, 8, 10, 5, 3, 7, 2, 9]
 
         # when
-        result1 = anti_quick_sort(n1)
-        result2 = anti_quick_sort(n2)
+        result1 = quick_sort_desolver(n1)
+        result2 = quick_sort_desolver(n2)
 
         # then
         self.assertEqual(result1, expected_result1)
