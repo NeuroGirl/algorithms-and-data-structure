@@ -3,10 +3,9 @@ import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.join(current_dir, '..', '..')
-print(src_dir)
 sys.path.insert(0, src_dir)
 
-from utils import open_close, write
+from utils import *
 
 
 def read(num_len, file_A, file_B):
@@ -114,12 +113,13 @@ def strassen_apply(num_len, file_A, file_B):
             final.append(c)
     return(final)
 
-file = open_close(9, -2)
+if __name__ == '__main__':
+    data = read_from_file('lab2/task9/txtf/input.txt')
+    dim = int(data[0])
+    array1 = data[1:dim**2+1]
+    array2 = data[dim**2+1:2*dim**2+2]
+    result = strassen_apply(dim, array1, array2)
 
-num_len = file[0]
-g = file[1]
-h = file[2]
-file_A = list(map(int, list(g.split(' '))))
-file_B = list(map(int, list(h.split(' '))))
+    write_in_file('lab2/task9/txtf/output.txt', result)
 
-write(9, ' '.join(map(str, strassen_apply(num_len, file_A, file_B))))
+    measuring(strassen_apply, dim, array1, array2)
