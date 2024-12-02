@@ -3,10 +3,9 @@ import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.join(current_dir, '..', '..')
-print(src_dir)
 sys.path.insert(0, src_dir)
 
-from utils import open_close, write
+from utils import *
 
 def majority_finder(a):
     dic = {}
@@ -17,7 +16,12 @@ def majority_finder(a):
             return 1
     return 0
 
+if __name__ == '__main__':
+    data = read_from_file('lab2/task5/txtf/input.txt')
+    n = data[0] 
+    array = data[1:]
+    result = majority_finder(array)
 
-nums = open_close(5, 1)
-list_input = nums[1]
-write(5, str(majority_finder(list(map(int, list(list_input.split(' ')))))))
+    write_in_file('lab2/task5/txtf/output.txt', str(result))
+
+    measuring(majority_finder, array)

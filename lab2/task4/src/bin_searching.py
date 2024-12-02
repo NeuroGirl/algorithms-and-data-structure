@@ -3,15 +3,9 @@ import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.join(current_dir, '..', '..')
-print(src_dir)
 sys.path.insert(0, src_dir)
 
-from utils import open_close, write
-
-file = open_close(4, 2)
-mass, mass_find = file[1], file[3]
-n, mass = file[0], list(map(int, list(mass.split(' '))))
-k, mass_find = file[2], list(map(int, list(mass_find.split(' '))))
+from utils import *
 
 def bin_searching(mass, what_find):
     l = 0
@@ -30,4 +24,14 @@ def bin_searching(mass, what_find):
 def start_search(mass, mass_find):
     return [bin_searching(mass, mass_find[i]) for i in range(len(mass_find))]
 
-write(4, ' '.join(map(str, start_search(mass, mass_find))))
+if __name__ == '__main__':
+    data = read_from_file('lab2/task4/txtf/input.txt')
+    n = int(data[0]) 
+    mass = data[1:n]
+    k = int(data[n+1])
+    mass_find = data[n+2: n+k+2]
+    result = start_search(mass, mass_find)
+
+    write_in_file('lab2/task4/txtf/output.txt', result)
+
+    measuring(start_search, mass, mass_find)
