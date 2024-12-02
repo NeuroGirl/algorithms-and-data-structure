@@ -4,6 +4,9 @@
 ## Вариант 18
 
 ## Задание 
+
+![image](https://github.com/user-attachments/assets/58dd21f6-3345-4d8a-9ef5-9e5eacad0556)
+
 ## Input / Output 
 
 | Input    | Output   |
