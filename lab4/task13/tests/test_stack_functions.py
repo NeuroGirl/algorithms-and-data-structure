@@ -10,6 +10,7 @@ import unittest
 from lab4.task13.src.stack_functions import *
 
 class TestStackFunctions(unittest.TestCase):
+        # given
         # when
     def setUp(self):
         self.stack = Stack()
@@ -20,13 +21,14 @@ class TestStackFunctions(unittest.TestCase):
         self.assertEqual(self.stack.display(), None)
     
     def test_should_check_success_of_stack_push_pop(self):
+        # given
         # when
         self.stack.push(10)
         self.stack.push(8)
+        
         # then
         self.assertEqual(self.stack.isEmpty(), False)
 
-        # when
         popped_value = self.stack.pop()
         # then
         self.assertEqual(popped_value, 8)

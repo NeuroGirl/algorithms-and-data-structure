@@ -23,8 +23,8 @@ def run_script(script_path, txtf_path, *args):
         if result.stderr:
             print(f"Ошибка записи {script_path}:")
             print(result.stderr)
-
-    print(f"Закончено выполнение {script_path}\n")
+    if "test" not in str(script_path):
+        print(f"Закончено выполнение {script_path}\n")
 
 
 def run_task(task_path):
@@ -64,7 +64,7 @@ def run_lab(lab_path):
 
 
 def main():
-    labs = ['lab2', 'lab3', 'lab4']
+    labs = ['lab3']
     for lab in labs:
         run_lab(lab)
 
