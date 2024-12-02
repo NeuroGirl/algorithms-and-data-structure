@@ -4,7 +4,7 @@ import os
 
 def run_script(script_path, txtf_path, *args):
     if not os.path.isfile(script_path):
-        print(f"Script {script_path} does not exist")
+        print(f"Скрипт {script_path} не существует")
         return
 
     # Передача пути к txtf
@@ -21,20 +21,20 @@ def run_script(script_path, txtf_path, *args):
             print(result.stderr)
     else:
         if result.stderr:
-            print(f"Error output of {script_path}:")
+            print(f"Ошибка записи {script_path}:")
             print(result.stderr)
 
-    print(f"Finished running {script_path}\n")
+    print(f"Закончено выполнение {script_path}\n")
 
 
 def run_task(task_path):
     print('---------------------------------------')
-    print(f"Running task {task_path}")
+    print(f"Выполнение задания {task_path}")
     src_path = os.path.join(task_path, "src")
     tests_path = os.path.join(task_path, "tests")
     txtf_path = os.path.join(task_path, "txtf")
     if not os.path.isdir(tests_path):
-        print(f"Tests directory {tests_path} does not exist")
+        print(f"Папка тестов {tests_path} не существует")
         return
 
     for test in os.listdir(tests_path):
@@ -42,24 +42,24 @@ def run_task(task_path):
             run_script(os.path.join(tests_path, test), txtf_path)
             
     if not os.path.isdir(src_path):
-        print(f"Source directory {src_path} does not exist")
+        print(f"Папка с кодами {src_path} не существует")
         return
 
     for script in os.listdir(src_path):
         if script.endswith(".py"):
             run_script(os.path.join(src_path, script), txtf_path)
 
-    print(f"Finished running task {task_path}")
+    print(f"Конец выполнения задания {task_path}")
     print('---------------------------------------\n')
 
 
 def run_lab(lab_path):
-    print(f"Running lab {lab_path}")
+    print(f"Выполнение лаборатрной {lab_path}")
     for task in os.listdir(lab_path):
         task_path = os.path.join(lab_path, task)
         if os.path.isdir(task_path) and not task.startswith('__pycache__'):
             run_task(task_path)
-    print(f"Finished running lab {lab_path}\n")
+    print(f"Окончание выполнения лабораторной {lab_path}\n")
     print('- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -')
 
 
