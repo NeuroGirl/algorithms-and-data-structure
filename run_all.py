@@ -33,15 +33,6 @@ def run_task(task_path):
     src_path = os.path.join(task_path, "src")
     tests_path = os.path.join(task_path, "tests")
     txtf_path = os.path.join(task_path, "txtf")
-
-    if not os.path.isdir(src_path):
-        print(f"Source directory {src_path} does not exist")
-        return
-
-    for script in os.listdir(src_path):
-        if script.endswith(".py"):
-            run_script(os.path.join(src_path, script), txtf_path)
-
     if not os.path.isdir(tests_path):
         print(f"Tests directory {tests_path} does not exist")
         return
@@ -49,6 +40,14 @@ def run_task(task_path):
     for test in os.listdir(tests_path):
         if test.endswith(".py"):
             run_script(os.path.join(tests_path, test), txtf_path)
+            
+    if not os.path.isdir(src_path):
+        print(f"Source directory {src_path} does not exist")
+        return
+
+    for script in os.listdir(src_path):
+        if script.endswith(".py"):
+            run_script(os.path.join(src_path, script), txtf_path)
 
     print(f"Finished running task {task_path}")
     print('---------------------------------------\n')
