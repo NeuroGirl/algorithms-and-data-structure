@@ -3,10 +3,9 @@ import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.join(current_dir, '..', '..')
-print(src_dir)
 sys.path.insert(0, src_dir)
 
-from utils import open_close, write
+from utils import *
 
 def sort_merge(nums):
     if len(nums) > 1:
@@ -36,14 +35,12 @@ def sort_merge(nums):
             q += 1
     return nums
 
+if __name__ == '__main__':
+    data = read_from_file('lab2/task1/txtf/input.txt')
 
-file = open_close(1, 1)
-if 1 <= file[0] <= 2 * 10 ** 4:
-    f = file[1]
-    nums = list(map(int, list(f.split(' '))))
-    if all([abs(x) <= 10 ** 9 for x in nums]):
-        write(1, ' '.join(map(str, sort_merge(nums))))
-    else:
-        print('Введите подходящие числа')
-else:
-    print('Неверное количество введенных чисел')
+    n, array = data[0], data[1:]
+    result = sort_merge(array)
+
+    write_in_file('lab2/task1/txtf/output.txt', result)
+
+    measuring(sort_merge, array)

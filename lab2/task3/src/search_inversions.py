@@ -3,10 +3,9 @@ import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.join(current_dir, '..', '..')
-print(src_dir)
 sys.path.insert(0, src_dir)
 
-from utils import open_close, write
+from utils import *
 
 def search(nums, nums_copy, l, mid, r):
     i = k = l
@@ -45,14 +44,11 @@ def search_inversions(nums, nums_copy, l, r):
 
     return inversins
 
-file = open_close(3, 1)
-if 1 <= file[0] <= 10 ** 5:
-    f = file[1]
-    nums = list(map(int, list(f.split(' '))))
-    nums_copy = nums.copy()
-    if all([abs(x) <= 10 ** 9 for x in nums]):
-        write(3, str(search_inversions(nums, nums_copy, 0, file[0] - 1)))
-    else:
-        print('Введите подходящие числа')
-else:
-    print('Неверное количество введенных чисел')
+if __name__ == '__main__':
+    data = read_from_file('lab2/task3/txtf/input.txt')
+    n, array = data[0], data[1:]
+    result = search_inversions(array, array, 0, int(n)-1)
+
+    write_in_file('lab2/task3/txtf/output.txt', str(result))
+
+    measuring(search_inversions, array, array, 0, int(n)-1)
