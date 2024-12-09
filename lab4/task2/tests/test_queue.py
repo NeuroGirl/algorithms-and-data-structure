@@ -8,8 +8,6 @@ sys.path.insert(0, src_dir)
 import unittest
 
 from task2.src.queue import queue_add_del
-from utils import generate_random_array_queue, measuring
-
 
 class TestQueue(unittest.TestCase):
 
