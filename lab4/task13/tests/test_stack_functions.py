@@ -27,9 +27,10 @@ class TestStackFunctions(unittest.TestCase):
         # then
         self.assertEqual(self.stack.isEmpty(), False)
 
-     def test_should_check_success_of_stack_pop(self):
+    def test_should_check_success_of_stack_pop(self):
         # given
-        # when        
+        # when    
+        self.stack.push(10)    
         popped_value = self.stack.pop()
         # then
         self.assertEqual(popped_value, 10)
