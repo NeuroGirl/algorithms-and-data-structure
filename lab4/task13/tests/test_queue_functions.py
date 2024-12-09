@@ -10,6 +10,7 @@ import unittest
 from lab4.task13.src.queue_functions import *
 
 class TestQueueFunctions(unittest.TestCase):
+        # given
         # when
     def setUp(self):
         self.queue = Queue(3)
@@ -23,7 +24,7 @@ class TestQueueFunctions(unittest.TestCase):
     def test_should_check_success_of_queue_enqueue(self):
         # when
         self.queue.enqueue(10)
-        #then
+        # then
         self.assertEqual(self.queue.isEmpty(), False)
         self.assertEqual(self.queue.peek(), 10)
         self.assertEqual(self.queue.queue_size(), 1)
