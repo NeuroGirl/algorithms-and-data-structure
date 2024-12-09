@@ -20,19 +20,20 @@ class TestStackFunctions(unittest.TestCase):
         self.assertEqual(self.stack.isEmpty(), True)
         self.assertEqual(self.stack.display(), None)
     
-    def test_should_check_success_of_stack_push_pop(self):
+    def test_should_check_success_of_stack_push(self):
         # given
         # when
         self.stack.push(10)
-        self.stack.push(8)
-        
         # then
         self.assertEqual(self.stack.isEmpty(), False)
 
+     def test_should_check_success_of_stack_pop(self):
+        # given
+        # when        
         popped_value = self.stack.pop()
         # then
-        self.assertEqual(popped_value, 8)
-        self.assertEqual(self.stack.isEmpty(), False)
+        self.assertEqual(popped_value, 10)
+        self.assertEqual(self.stack.isEmpty(), True)
 
 
 if __name__ == '__main__':
