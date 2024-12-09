@@ -12,13 +12,13 @@ def bracet_counter(line):
     matching_brackets = {')': '(', ']': '['}
 
     for char in line:
-        if char in "([":  # Если открывающая скобка
+        if char in "([":  
             stack.append(char)
-        elif char in ")]":  # Если закрывающая скобка
+        elif char in ")]": 
             if stack and stack[-1] == matching_brackets[char]:
                 stack.pop()
             else:
-                return False  # Если не соответствует, последовательность неправильная
+                return False 
     return not stack
 
 def bracet_counter_cycled(n, lines):
