@@ -22,6 +22,7 @@ class TestQueueFunctions(unittest.TestCase):
         self.assertEqual(self.queue.queue_size(), 0)
 
     def test_should_check_success_of_queue_enqueue(self):
+        # given
         # when
         self.queue.enqueue(10)
         # then
@@ -30,6 +31,7 @@ class TestQueueFunctions(unittest.TestCase):
         self.assertEqual(self.queue.queue_size(), 1)
 
     def test_should_check_success_of_queue_dequeue(self):
+        # given
         # when
         self.queue.dequeue()
         # then
@@ -39,6 +41,7 @@ class TestQueueFunctions(unittest.TestCase):
         self.assertEqual(self.queue.dequeue(), 'Очередь пуста')
 
     def test_should_check_success_of_queue_full(self):
+        # given
         # when
         self.queue.enqueue(20)
         self.queue.enqueue(10)
