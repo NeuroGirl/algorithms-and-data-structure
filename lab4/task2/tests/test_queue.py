@@ -25,12 +25,5 @@ class TestQueue(unittest.TestCase):
         # then
         self.assertEqual(result, expected_result)
 
-    def test_should_check_the_time_of_sorting_example1_array(self):
-        # given
-        n = 10**6
-        array = generate_random_array_queue(n)
-        print(measuring(1e1, queue_add_del, n, array))
-
-
 if __name__ == '__main__':
     unittest.main()
