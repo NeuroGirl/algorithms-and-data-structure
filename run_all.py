@@ -64,7 +64,7 @@ def run_lab(lab_path):
 
 
 def main():
-    labs = ["lab2", "lab3", "lab4", "lab5", "lab6"]
+    labs = ["lab2", "lab3", "lab4", "lab5", "lab6", "lab7"]
     for lab in labs:
         run_lab(lab)
 
