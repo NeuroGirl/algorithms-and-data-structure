@@ -1,13 +1,11 @@
-# Задание №4 по варианту: Очередь
+# Задание №4 по варианту: Построение пирамиды
 Студентка ИТМО,  Сусликова Вероника Денисовна 467632
 
 ## Вариант 18
 
 ## Задание 
 
-![image](https://github.com/user-attachments/assets/e21c16ab-6d68-4af4-a097-541910b79be4)
-
-![image](https://github.com/user-attachments/assets/770532a3-87af-4d4d-a0a1-c897e3ff7470)
+![image](https://github.com/user-attachments/assets/03a96b0f-88a6-4b3b-820a-7633135f9e05)
 
 ## Input / Output 
 
