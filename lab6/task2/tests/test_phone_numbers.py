@@ -13,7 +13,6 @@ class TestPhoneNumbers(unittest.TestCase):
 
     def test_should_check_the_possibility_of_search_in_the_1st_phone_book(self):
         # given
-        n = 12
         array = ['add', '911', 'police', 'add', '76213', 'Mom', 'add', '17239', 'Bob', 'find', '76213', 'find', '910', 'find', '911', 'del', '910', 'del', '911', 'find', '911', 'find', '76213', 'add', '76213', 'daddy', 'find', '76213']
         expected_result = ['Mom\n', 'not found\n', 'police\n', 'not found\n', 'Mom\n', 'daddy\n']
 
@@ -25,7 +24,6 @@ class TestPhoneNumbers(unittest.TestCase):
 
     def test_should_check_the_possibility_of_of_search_in_the_2nd_phone_book(self):
         # given
-        n = 11
         array = ['add', '76213', 'Chuuya', 'add', '17239', 'Hirotsu', 'find', '76213', 'find', '910', 'find', '911', 'del', '910', 'del', '911', 'find', '911', 'find', '76213', 'add', '76213', 'Mori', 'find', '76213']
         expected_result = ['Chuuya\n', 'not found\n', 'not found\n', 'not found\n', 'Chuuya\n', 'Mori\n']
 

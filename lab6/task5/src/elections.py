@@ -7,11 +7,11 @@ sys.path.insert(0, SRC_DIR)
 
 from utils import read_from_file, write_in_file, measuring
 
-def count_votes(A):
+def count_votes(arr):
     votes = {}
 
-    for x in range(0, len(A), 2):
-        candidate, votes_count = A[x], A[x+1]
+    for x in range(0, len(arr), 2):
+        candidate, votes_count = arr[x], arr[x+1]
         votes_count = int(votes_count)
 
         if candidate in votes:
