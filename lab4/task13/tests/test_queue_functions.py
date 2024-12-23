@@ -7,7 +7,7 @@ sys.path.insert(0, src_dir)
 
 import unittest
 
-from lab4.task13.src.queue_functions import *
+from lab4.task13.src.queue_functions import Queue
 
 class TestQueueFunctions(unittest.TestCase):
         # given

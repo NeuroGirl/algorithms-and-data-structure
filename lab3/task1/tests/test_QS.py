@@ -63,7 +63,6 @@ class TestQuickSort(unittest.TestCase):
 
     def test_should_sort_empty_array(self):
         # given
-        n = 0
         array = []
         expected_result = []
 

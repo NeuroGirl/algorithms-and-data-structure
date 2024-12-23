@@ -7,7 +7,7 @@ sys.path.insert(0, src_dir)
 
 import unittest
 
-from lab4.task13.src.stack_functions import *
+from lab4.task13.src.stack_functions import Stack
 
 class TestStackFunctions(unittest.TestCase):
         # given

@@ -13,7 +13,7 @@ class TestFormation(unittest.TestCase):
 
     def test_should_check_the_possibility_of_solving_example1_array(self):
         # given
-        n, m = 3, 4
+        n = 3
         array = ["left 2 1", "right 3 1", "leave 1" ,"name 2"]
         expected_result = ["0 3"]
 
