@@ -15,7 +15,7 @@ def measuring(mult, task_func, *args):
 
 
 def read_from_file(num, filename: str, type=int):
-    # Используем переменную окружения для корректного пути к файлу
+
     txt_path = os.environ.get('TXT_FILE_PATH', '')
     filepath = os.path.join(filename)
 
@@ -38,7 +38,7 @@ def read_from_file(num, filename: str, type=int):
 
 
 def write_in_file(filename, data):
-    # Используем переменную окружения для корректного пути к файлу
+
     txt_path = os.environ.get('TXT_FILE_PATH', '')
     filepath = os.path.join(filename)
 
