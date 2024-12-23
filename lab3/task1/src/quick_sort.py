@@ -8,23 +8,23 @@ sys.path.insert(0, src_dir)
 from utils import read_from_file, write_in_file, measuring
 
 
-def partition(A, l, r):
-    x = A[l]
+def partition(a, l, r):
+    x = a[l]
     j = l
     for i in range(l+1, r+1):
-        if A[i] < x:
+        if a[i] < x:
             j += 1
-            A[j], A[i] = A[i], A[j]
-    A[l], A[j] = A[j], A[l]
+            a[j], a[i] = a[i], a[j]
+    a[l], a[j] = a[j], a[l]
     return j
 
 
-def quick_sort(A, l, r):
+def quick_sort(a, l, r):
     if l < r:
-        j = partition(A, l, r)
-        quick_sort(A, l, j-1)
-        quick_sort(A, j+1, r)
-    return A
+        j = partition(a, l, r)
+        quick_sort(a, l, j-1)
+        quick_sort(a, j+1, r)
+    return a
 
 
 if __name__ == '__main__':
