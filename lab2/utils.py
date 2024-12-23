@@ -14,7 +14,7 @@ def measuring(task_func, *args):
     print(f"Memory: {memory} Mb")
 
 
-def read_from_file(filename: str, type=int):
+def read_from_file(filename, type=int):
     # Используем переменную окружения для корректного пути к файлу
     txtf_path = os.environ.get('TXT_FILE_PATH', '')
     filepath = os.path.join(filename)
@@ -29,7 +29,7 @@ def read_from_file(filename: str, type=int):
         return data
 
 
-def write_in_file(filename: str, data):
+def write_in_file(filename, data):
     # Используем переменную окружения для корректного пути к файлу
     txtf_path = os.environ.get('TXT_FILE_PATH', '')
     filepath = os.path.join(filename)

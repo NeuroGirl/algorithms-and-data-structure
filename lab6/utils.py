@@ -14,7 +14,7 @@ def measuring(mult, task_func, *args):
     print(f"Memory: {memory} Mb")
 
 
-def read_from_file(num, filename: str, type=int):
+def read_from_file(num, filename, type=int):
 
     txt_path = os.environ.get('TXT_FILE_PATH', '')
     filepath = os.path.join(filename)
