@@ -8,24 +8,24 @@ sys.path.insert(0, src_dir)
 from utils import read_from_file, write_in_file, measuring
 
 
-def read(num_len, file_A, file_B):
+def read(num_len, file_a, file_b):
     a = []
     b = []
     d = []
-    for x in file_A:
+    for x in file_a:
         d.append(int(x))
         if len(d) == num_len:
             a.append(d) 
             d = []
-    for x in file_B:
+    for x in file_b:
         d.append(int(x))
         if len(d) == num_len:
             b.append(d) 
             d = []
     return [a, b]
 
-def divide(num_len, file_A, file_B):
-    g = read(num_len, file_A, file_B)
+def divide(num_len, file_a, file_b):
+    g = read(num_len, file_a, file_b)
     new_a= []
     for a in g[0]:
         if len(a) > 2:
@@ -56,8 +56,8 @@ def divide(num_len, file_A, file_B):
 
     return [new_a, new_b]
 
-def block_merge(num_len, file_A, file_B):
-    g = divide(num_len, file_A, file_B)
+def block_merge(num_len, file_a, file_b):
+    g = divide(num_len, file_a, file_b)
     a = g[0]
     new_a = []
     row = []
@@ -83,9 +83,9 @@ def block_merge(num_len, file_A, file_B):
         x += 1
     return [new_a, new_b]
 
-def strassen(file_A, file_B):
-    mat_a = file_A
-    mat_b = file_B
+def strassen(file_a, file_b):
+    mat_a = file_a
+    mat_b = file_b
     p1 = mat_a[0][0] * (mat_b[0][1] - mat_b[1][1])
     p2 = (mat_a[0][0] + mat_a[0][1]) * mat_b[1][1]
     p3 = (mat_a[1][0] + mat_a[1][1]) * mat_b[0][0]
@@ -98,8 +98,8 @@ def strassen(file_A, file_B):
     c.append([p3 + p4, p1 + p5 - p3 - p7])
     return c
 
-def strassen_apply(num_len, file_A, file_B):
-    g = block_merge(num_len, file_A, file_B)
+def strassen_apply(num_len, file_a, file_b):
+    g = block_merge(num_len, file_a, file_b)
     a = g[0]
     b = g[1]
     final = []
