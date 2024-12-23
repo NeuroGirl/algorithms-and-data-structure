@@ -5,7 +5,7 @@
 
 ## Задание 
 
-![image](https://github.com/user-attachments/assets/2bdf867f-a649-473a-a097-c0c16c238fb9)
+![image](https://github.com/user-attachments/assets/766bc123-08eb-45ba-8279-82cc468141f6)
 
 ## Input / Output 
 
