@@ -1,13 +1,6 @@
-import random
 import time
 import psutil
 import os
-
-
-def generate_random_array(n, left, right):
-    array = [random.randint(left, right+1) for _ in range(1, n+1)]
-    return array
-
 
 def measuring(task_func, *args):
 

@@ -5,7 +5,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.join(current_dir, '..', '..')
 sys.path.insert(0, src_dir)
 
-from utils import *
+from utils import read_from_file, write_in_file, measuring
 
 def bin_searching(mass, what_find):
     l = 0
