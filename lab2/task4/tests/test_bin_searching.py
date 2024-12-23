@@ -14,9 +14,7 @@ class TestBinSearching(unittest.TestCase):
 
     def test_should_create_check_calculating_1st_array(self):
         # given
-        n = 5
         mass = ['1', '5', '8', '12', '13']
-        k = 5
         mass_find = ['8', '1', '23', '1', '11']
 
         # when

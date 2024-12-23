@@ -14,7 +14,6 @@ class TestMajorityFinder(unittest.TestCase):
 
     def test_should_create_check_calculating_1st_array(self):
         # given
-        n = 5
         mass = ['2', '3', '9', '2', '2']
 
         # when

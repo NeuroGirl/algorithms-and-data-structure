@@ -14,7 +14,6 @@ class TestSortMerge(unittest.TestCase):
 
     def test_should_create_check_sorting_1st_array(self):
         # given
-        n = 5
         array = ["2", "3", "4", "7", "5"]
 
         # when
