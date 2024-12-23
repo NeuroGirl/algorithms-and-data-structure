@@ -11,15 +11,14 @@
 
 | Input    | Output   |
 |----------|----------|
-|4         |1         |
-|+1        |10        |
-|+10       |          |
-|-         |          |
-|-         |          |
+|5         |3         |
+|5 4 3 2 1 |1 4       |
+|          |0 1       |
+|          |1 3       |
 
 ## Ограничения по времени и памяти
 
-- Ограничение по времени. 2 сек
+- Ограничение по времени. 3 сек
 - Ограничение по памяти. 256 мб
 
 ## Запуск проекта
@@ -29,14 +28,14 @@
    ```
 2. Перейдите в папку с проектом:
    ```bash
-   cd algorithms-and-data-structure/lab4/task2
+   cd algorithms-and-data-structure/lab5/task4
    
 3. Запустите программу:
    ```bash
-   python src/queue.py
+   python src/pyramid_build.py
    ```
 
 4. Запуск тестов:
    ```bash
-   python src/test_queue.py
+   python src/test_pyramid_build.py
    ```
